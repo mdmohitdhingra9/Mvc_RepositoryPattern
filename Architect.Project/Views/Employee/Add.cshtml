@@ -1,0 +1,82 @@
+﻿@model Architect.Models.Models.Employee
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add</h2>
+
+@using (Html.BeginForm("Save", "Employee", FormMethod.Post, new { @class = "form-horizontal", role = "form",enctype="multipart/form-data" }))
+{
+    <h4>Create a new Employee</h4>
+    <hr />
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary("", new { @class="text-danger"})
+    @Html.HiddenFor(x=>x.Id)
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">
+           Select Department 
+        </label>
+        <div class="col-md-10">
+            @Html.DropDownListFor(x => x.DepartmentId, new SelectList(ViewBag.DepartmentList, "DepartmentId", "DepartmentName"), "Select", new { @class = "form-control" })
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(x=>x.FirstMidName, new { @class= "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(x => x.FirstMidName, new { @class = "form-control" })
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.LastName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Gender, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            Male                  : @Html.RadioButtonFor(x => x.Gender, "M", new { @class = "radio" })
+            Female                : @Html.RadioButtonFor(x => x.Gender, "F", new { @class = "radio" })
+            I don't want to share :@Html.RadioButtonFor(x => x.Gender, "I", new { @class = "radio" })
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Address, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(x => x.Address, new { @class = "form-control" })
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.DateOfBirth, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.EditorFor(x => x.DateOfBirth, new { htmlAttributes = new { @class = "form-control", @placeholder = "DD/MM/YYYY" } })
+        </div>
+    </div>
+    <br />
+
+    <div>
+        Upload File: 
+        @Html.TextBoxFor(x => x.file, new { @type="file"})<br />
+
+        @*@Html.TextBox("file", "", new { type="file"})*@
+
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Save" />
+        </div>
+    </div>
+}
+

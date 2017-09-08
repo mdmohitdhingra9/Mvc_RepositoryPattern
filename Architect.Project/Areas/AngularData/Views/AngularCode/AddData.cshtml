@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "AddData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddData</h2>
+
+<div ng-controller="datacontroller">
+    <form>
+        <h4>Create a new data.</h4>
+        <hr />
+        Textbox color changes:
+        <input type="text" ng-model="txtcolr" style="background-color:{{amountcolr}}" />
+
+        <br />
+        <select ng-model="ddlData1" ng-options="v as v.name for v in selectData1" ng-change="clickdata(ddlData1)">
+            <option>Select</option>
+            @*<option ng-repeat="s in selectData1" value="{{s.id}}">{{s.name}}</option>*@
+        </select>
+        <br />
+        <table>
+            <tr><th>id</th><th>name</th></tr>
+            <tr ng-repeat="val in values">
+                <td>{{val.id}}</td>
+                <td>{{val.name}}</td>
+            </tr>
+        </table>
+        <input type="button" value="Submit" />
+    </form>
+</div>
+<script type="text/javascript">
+    architectApp.controller('datacontroller', mycontroller);
+    function mycontroller($scope, $http)
+    {
+        $scope.clickdata = function (value)
+        {
+            console.log(value.id);
+            var datamodel = {
+                'id': value.id,
+                'name': "Mohit"
+            };
+            $http.post('/api/angular/Data2byData1id/', datamodel).then(function (res) {
+                $scope.values = res.data;
+            });
+        }
+
+        //debugger;
+        $http.get('/api/angular/GetData1').then(function (response) { $scope.selectData1 = response.data; })
+        var datamodel = {
+            'id':1,
+            'name':"Mohit"
+        };
+        console.log(datamodel);
+        //$http.post('/api/angular/Data2byData1id/', datamodel).then(function (response) { console.log(response); })
+
+        //$http({
+        //    url: '/api/angular/Data2byData1id/',
+        //    method: 'POST',
+        //    data: { datamodel },
+        //    headers: { 'Content-Type': 'application/json' }
+        //}).then(function (response) {
+        //    console.log(response);
+        //});
+
+        //$http.post('/api/angular/Data2byData1id/',
+        //    JSON.stringify(datamodel),
+        //    { headers: {'Content-Type':'application/json'}}).then(function (response) { console.log(response); })
+
+        //$http({
+        //    method: "POST",
+        //    url: "/api/angular/GetData1",
+        //}).success(function (data) {
+        //    console.log(data);
+        //}).error(function (e) {
+
+        //});
+
+        $scope.getColor = function (amount)
+        {
+            if (amount > 100)
+                return "blue";
+            else if (amount <= 100)
+                return "green";
+        }
+        $scope.$watch("txtcolr", function (newValue,oldValue) {
+            $scope.amountcolr = $scope.getColor($scope.txtcolr);
+        });
+    }
+</script>
