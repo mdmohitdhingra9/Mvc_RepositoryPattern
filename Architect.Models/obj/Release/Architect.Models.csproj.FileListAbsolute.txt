@@ -17,3 +17,4 @@ C:\Users\mdhingra\documents\visual studio 2017\Projects\Architect.Project\Archit
 C:\Users\mdhingra\documents\visual studio 2017\Projects\Architect.Project\Architect.Models\bin\Release\Microsoft.Owin.Security.xml
 C:\Users\mdhingra\documents\visual studio 2017\Projects\Architect.Project\Architect.Models\obj\Release\Architect.Models.dll
 C:\Users\mdhingra\documents\visual studio 2017\Projects\Architect.Project\Architect.Models\obj\Release\Architect.Models.pdb
+C:\Users\mdhingra\documents\visual studio 2017\Projects\Architect.Project\Architect.Models\obj\Release\Architect.Models.csprojResolveAssemblyReference.cache

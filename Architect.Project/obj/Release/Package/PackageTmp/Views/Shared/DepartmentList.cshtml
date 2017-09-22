@@ -1,0 +1,31 @@
+﻿@model List<Architect.Models.Models.Deparment>
+<div>
+    @if (Model != null && Model.Any())
+    {
+        <span>Departments :</span>
+        <hr />
+        <table>
+            <tr>
+                <th>Department Id</th>
+                <th>Department Name</th>
+                <th>Action</th>
+            </tr>
+            @foreach (var dept in Model)
+            {
+                <tr>
+                    <td>
+                        @dept.DepartmentId
+                    </td>
+                    <td>
+                        @dept.DepartmentName
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditDepartment", dept) | @Html.ActionLink("Delete", "DeleteDepartment", dept)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+
+</div>

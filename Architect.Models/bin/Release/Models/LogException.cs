@@ -8,20 +8,22 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Architect.Models.Models
 {
-   public class ExceptionLogger
+   public class LogException : Exception
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ExceptionId { get; set; }
+        public int Id { get; set; }
         
+        public string UserId { get; set; }
+
         public string Message { get; set; }
 
         public string Url { get; set; }
 
         public string Type { get; set; }
 
-        [Column(TypeName = "NVarchar(max)")]
-        [DataType(DataType.Text)]
+        //[Column(TypeName = "NVarchar(max)")]
+        //[DataType(DataType.Text)]
         public string Source { get; set; }
     }
 }

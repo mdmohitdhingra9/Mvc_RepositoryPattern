@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ApplicationDbContext-Web.config Connection String" description="ApplicationDbContext Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:aspnet-mvc-server.database.windows.net,1433;Initial Catalog=aspnetmvc-db;Persist Security Info=False;User ID=webappuser;Password=DeloitteAdmin1234@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\mdhingra\\documents\\visual\ studio\ 2017\\Projects\\Architect\.Project\\Architect\.Project\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ApplicationDbContext']/@connectionString" />
+  </parameter>
+</parameters>

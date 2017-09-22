@@ -1,0 +1,8 @@
+C:\Users\mdhingra\documents\visual studio 2017\Projects\Architect.Project\Architect.Interfaces\bin\Release\Architect.Interfaces.dll
+C:\Users\mdhingra\documents\visual studio 2017\Projects\Architect.Project\Architect.Interfaces\bin\Release\Architect.Interfaces.pdb
+C:\Users\mdhingra\documents\visual studio 2017\Projects\Architect.Project\Architect.Interfaces\bin\Release\Architect.Models.dll
+C:\Users\mdhingra\documents\visual studio 2017\Projects\Architect.Project\Architect.Interfaces\bin\Release\Architect.Models.pdb
+C:\Users\mdhingra\documents\visual studio 2017\Projects\Architect.Project\Architect.Interfaces\bin\Release\Architect.Models.dll.config
+C:\Users\mdhingra\documents\visual studio 2017\Projects\Architect.Project\Architect.Interfaces\obj\Release\Architect.Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\mdhingra\documents\visual studio 2017\Projects\Architect.Project\Architect.Interfaces\obj\Release\Architect.Interfaces.dll
+C:\Users\mdhingra\documents\visual studio 2017\Projects\Architect.Project\Architect.Interfaces\obj\Release\Architect.Interfaces.pdb
